@@ -1,9 +1,8 @@
 function Cat(_name) {
-  
   this.name = _name;
-  foodAmount = 50;
-  
-  formatFoodAmount = function () {
+  var foodAmount = 50;
+
+  var formatFoodAmount = function () {
     return foodAmount + ' гр ';
   };
 

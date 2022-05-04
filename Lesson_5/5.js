@@ -5,9 +5,9 @@ function isEpty(obj) {
   }
   return count > 0 ? false : true;
 }
-var myObj = { name: "andrey", age: 23, gender: "male" };
+var myObj = { name: 'andrey', age: 23, gender: 'male' };
 console.log(isEpty(myObj));
-console.log("___________________");
+console.log('___________________');
 
 var x,
   n,
@@ -21,26 +21,25 @@ function pow(x, n) {
   }
   return result;
 }
-x = prompt("Введите число x", "");
+x = prompt('Введите число x', '');
 while (resultParseX != false || x < 1) {
   resultParseX = parseInt(x);
   resultParseX = Number.isNaN(resultParseX);
   if (resultParseX == true || x < 1) {
-    alert("Введите пожалуйста целое положительное число");
-    x = prompt("Введите число x", "");
+    alert('Введите пожалуйста целое положительное число');
+    x = prompt('Введите число x', '');
   }
 }
-n = prompt("Введите число n", "");
+n = prompt('Введите число n', '');
 while (resultParseN != false || n < 1) {
   resultParseN = parseInt(n);
-  resultParseN = Number.isNaN(resultParseN);
-  if (resultParseN == true || n < 1) {
-    alert("Введите пожалуйста целое положительное число");
-    n = prompt("Введите число n", "");
+  if (isNaN(resultParseN) == true || n < 1) {
+    alert('Введите пожалуйста целое положительное число');
+    n = prompt('Введите число n', '');
   }
 }
 console.log(pow(x, n));
-console.log("___________________");
+console.log('___________________');
 
 function sumToFirst(n) {
   var result = 0;
@@ -67,7 +66,7 @@ function sumToThird(n) {
   return (s = ((1 + n) * n) / 2);
 }
 console.log(sumToThird(5));
-console.log("___________________");
+console.log('___________________');
 
 /* Какой вариант решения самый быстрый? 
  Ответ : наверное, через формулу, т.к  выполняется минимальное количество действий 
@@ -82,10 +81,10 @@ function treeSum(arr) {
   var sum = 0;
 
   for (var i = 0; i < arr.length; i++) {
-    if (typeof arr[i] === "number" && isNaN(arr[i]) === false) {
+    if (typeof arr[i] === 'number' && isNaN(arr[i]) === false) {
       sum = sum + +arr[i];
     } else if (
-      typeof arr[i] === "object" &&
+      typeof arr[i] === 'object' &&
       arr[i] !== null &&
       arr.length > 0
     ) {
@@ -94,5 +93,5 @@ function treeSum(arr) {
   }
   return sum;
 }
-myArr = [5, 7, "", null, NaN, [4, [2], 8, [1, 3], 2], [9, []], 1, 8];
+myArr = [5, 7, '', null, NaN, [4, [2], 8, [1, 3], 2], [9, []], 1, 8];
 console.log(treeSum(myArr));
