@@ -49,16 +49,16 @@ cat = null;
 console.log('_____________');
 
 function duplicateAnimal(name) {
-  this.name = name;
+  this._name = name;
   this._foodAmountDuplicate = 50;
 }
 
-duplicateAnimal.prototype.formatFoodAmountDuplicate = function () {
+duplicateAnimal.prototype._formatFoodAmountDuplicate = function () {
   return this._foodAmountDuplicate + ' гр ';
 };
 
 duplicateAnimal.prototype.dailyNormDuplicate = function (foodAmount) {
-  if (!arguments.length) return this.formatFoodAmountDuplicate();
+  if (!arguments.length) return this._formatFoodAmountDuplicate();
 
   if (foodAmount < 50) {
     throw new Error('Значение должно быть > 50');
